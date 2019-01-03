@@ -32,9 +32,8 @@ script:
 after_success:
   - pwd
   - ls -lh
-  - cd coverage
-  - bash <(curl -s https://codecov.io/bash) -f lcov.info
-  - coveralls-lcov lcov.info
+  - bash <(curl -s https://codecov.io/bash) -f coverage/lcov.info
+  - coveralls-lcov coverage/lcov.info
 cache:
   directories:
     - $HOME/.pub-cache
