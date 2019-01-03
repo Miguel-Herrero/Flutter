@@ -20,16 +20,18 @@ matrix:
   fast_finish: true
 
   include:
-  - name: Test
-    env: COMMAND=test --coverage
+  - name: Test and Coverage
+    script:
+      - cd flight_list
+      - ../flutter/bin/flutter test --coverage
     after_success:
       - bash <(curl -s https://codecov.io/bash) -f coverage/lcov.info
       - coveralls-lcov coverage/lcov.info
   - name: Analyze
     env: COMMAND=analyze
-script:
-  - cd flight_list
-  - ../flutter/bin/flutter $COMMAND
+    script:
+      - cd flight_list
+      - ../flutter/bin/flutter analyze
 cache:
   directories:
     - $HOME/.pub-cache
