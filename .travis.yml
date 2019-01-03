@@ -28,6 +28,8 @@ script:
   - cd flight_list
   - ../flutter/bin/flutter $COMMAND
 after_success:
+  - pwd
+  - cd flight_list
   - bash <(curl -s https://codecov.io/bash) -f coverage/lcov.info
   - coveralls-lcov ./flight_list/coverage/lcov.info
 cache:
