@@ -22,16 +22,15 @@ matrix:
   include:
   - name: Test
     env: COMMAND=test --coverage
+    after_success:
+      - bash <(curl -s https://codecov.io/bash) -f coverage/lcov.info
+      - coveralls-lcov coverage/lcov.info
   #- name: Analyze
   #  env: COMMAND=analyze
 script:
   - cd flight_list
   - ../flutter/bin/flutter test --coverage test
-after_success:
-  - pwd
-  - ls -lh
-  - bash <(curl -s https://codecov.io/bash) -f coverage/lcov.info
-  - coveralls-lcov coverage/lcov.info
+
 cache:
   directories:
     - $HOME/.pub-cache
