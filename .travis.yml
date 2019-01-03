@@ -24,9 +24,11 @@ matrix:
     env: COMMAND=test --coverage
   #- name: Analyze
   #  env: COMMAND=analyze
+before_script:
+  - export PATH=`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin:$PATH
 script:
   - cd flight_list
-  - ../flutter/bin/flutter $COMMAND
+  - flutter test --coverage test
 after_success:
   - pwd
   - ls -lh
