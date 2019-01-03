@@ -1,5 +1,5 @@
-os:
-  - linux
+os: linux
+language: generic
 sudo: false
 addons:
   apt:
@@ -11,7 +11,7 @@ addons:
       - fonts-droid
 before_script:
   - git clone https://github.com/flutter/flutter.git -b beta --depth 1
-  #- ./flutter/bin/flutter doctor
+  - ./flutter/bin/flutter doctor
   - gem install coveralls-lcov
 matrix:
   # This causes the build to complete immediately upon first failure or once
@@ -25,12 +25,11 @@ matrix:
     after_success:
       - bash <(curl -s https://codecov.io/bash) -f coverage/lcov.info
       - coveralls-lcov coverage/lcov.info
-  #- name: Analyze
-  #  env: COMMAND=analyze
+  - name: Analyze
+    env: COMMAND=analyze
 script:
   - cd flight_list
-  - ../flutter/bin/flutter test --coverage test
-
+  - ../flutter/bin/flutter $COMMAND
 cache:
   directories:
     - $HOME/.pub-cache
