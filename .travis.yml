@@ -11,7 +11,7 @@ addons:
       - fonts-droid
 before_script:
   - git clone https://github.com/flutter/flutter.git -b beta --depth 1
-  - ./flutter/bin/flutter doctor
+  #- ./flutter/bin/flutter doctor
   - gem install coveralls-lcov
 matrix:
   # This causes the build to complete immediately upon first failure or once
