@@ -28,7 +28,7 @@ script:
   - cd flight_list
   - ../flutter/bin/flutter $COMMAND
 after_success:
-  - coveralls-lcov coverage/lcov.info
+  - coveralls-lcov ./coverage/lcov.info
 cache:
   directories:
     - $HOME/.pub-cache
