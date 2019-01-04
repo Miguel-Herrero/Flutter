@@ -96,9 +96,9 @@ class CityCard extends StatelessWidget {
                   width: 160.0,
                   height: 60.0,
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         gradient: LinearGradient(
-                            colors: [Colors.black, Colors.black12],
+                            colors: <Color>[Colors.black, Colors.black12],
                             begin: Alignment.bottomCenter,
                             end: Alignment.topCenter)),
                   ),
@@ -115,27 +115,27 @@ class CityCard extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Text(cityName,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white,
                                   fontSize: 18.0)),
                           Text(monthYear,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontWeight: FontWeight.normal,
                                   color: Colors.white,
                                   fontSize: 14.0))
                         ],
                       ),
                       Container(
-                        padding: EdgeInsets.symmetric(horizontal: 6.0),
-                        decoration: BoxDecoration(
+                        padding: const EdgeInsets.symmetric(horizontal: 6.0),
+                        decoration: const BoxDecoration(
                             shape: BoxShape.rectangle,
                             color: Colors.white,
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10.0))),
-                        child: Text("$discount%",
+                        child: Text('$discount%',
                             style:
-                                TextStyle(fontSize: 14.0, color: Colors.black)),
+                                const TextStyle(fontSize: 14.0, color: Colors.black)),
                       )
                     ],
                   ),
@@ -147,10 +147,22 @@ class CityCard extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              const SizedBox(width: 5.0,),
-              Text('${formatCurrency.format(newPrice)}', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 14.0)),
-              SizedBox(width: 5.0,),
-              Text('(${formatCurrency.format(oldPrice)})', style: TextStyle(color: Colors.grey, fontWeight: FontWeight.normal, fontSize: 12.0)),
+              const SizedBox(
+                width: 5.0,
+              ),
+              Text('${formatCurrency.format(newPrice)}',
+                  style: const TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 14.0)),
+              const SizedBox(
+                width: 5.0,
+              ),
+              Text('(${formatCurrency.format(oldPrice)})',
+                  style: const TextStyle(
+                      color: Colors.grey,
+                      fontWeight: FontWeight.normal,
+                      fontSize: 12.0)),
             ],
           )
         ],
