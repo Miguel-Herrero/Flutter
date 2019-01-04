@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flight_list/ui/custom_shape_clipper.dart';
 import 'package:flight_list/theme.dart';
+import 'package:flight_list/home/home_bottom.dart';
 
 const List<String> locations = <String>[
   'Boston (BOS)',
@@ -16,7 +17,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: const <Widget>[HomeTop()],
+        children: const <Widget>[HomeTop(), HomeBottom()],
       ),
     );
   }

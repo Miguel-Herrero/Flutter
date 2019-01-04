@@ -8,3 +8,5 @@ const TextStyle dropDownLabelStyle =
     TextStyle(color: Colors.white, fontSize: 16.0);
 const TextStyle dropDownMenuItemStyle =
     TextStyle(color: Colors.black, fontSize: 16.0);
+final TextStyle viewAllStyle =
+    TextStyle(color: appTheme.primaryColor, fontSize: 14.0);
