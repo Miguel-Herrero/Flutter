@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flight_list/main.dart';
 import 'package:flight_list/main.dart' as my_app;
-import 'package:flight_list/home/home_screen.dart';
+import 'package:flight_list/home/home_page.dart';
 
 void main() {
   testWidgets('Renders (Widget testing)', (WidgetTester tester) async {
@@ -11,7 +11,7 @@ void main() {
     await tester.pumpWidget(const MyApp());
 
     expect(find.byType(MaterialApp), findsOneWidget);
-    expect(find.byType(HomeScreen), findsOneWidget);
+    expect(find.byType(HomePage), findsOneWidget);
   });
 
   testWidgets('Renders (Unit testing)', (WidgetTester tester) async {
@@ -19,6 +19,7 @@ void main() {
     await tester.pump(); // triggers a frame
 
     expect(find.byType(MaterialApp), findsOneWidget);
-    expect(find.byType(HomeScreen), findsOneWidget);
+    expect(find.byType(HomePage), findsOneWidget);
+    expect(find.text('Adios'), findsOneWidget);
   });
 }
