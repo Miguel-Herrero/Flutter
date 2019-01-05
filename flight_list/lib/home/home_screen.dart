@@ -17,7 +17,13 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: const <Widget>[HomeTop(), HomeBottom()],
+        children: const <Widget>[
+          SizedBox(
+            height: 50.0,
+          ),
+          HomeTop(),
+          HomeBottom()
+        ],
       ),
     );
   }
