@@ -46,7 +46,8 @@ void main() {
           findsOneWidget);
     });
 
-    testWidgets('has not BoxDecoration when not selected', (WidgetTester tester) async {
+    testWidgets('has not BoxDecoration when not selected',
+        (WidgetTester tester) async {
       // Build our app and trigger a frame.
       await tester.pumpWidget(const MaterialApp(
         home: Scaffold(
@@ -57,8 +58,7 @@ void main() {
 
       expect(
           find.byWidgetPredicate((Widget widget) =>
-              widget is Container &&
-              widget.decoration == null),
+              widget is Container && widget.decoration == null),
           findsOneWidget);
     });
   });

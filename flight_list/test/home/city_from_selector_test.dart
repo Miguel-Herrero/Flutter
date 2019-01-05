@@ -28,7 +28,8 @@ void main() {
 
       await tester.tap(find.text('Item1'));
       await tester.pump();
-      await tester.pump(const Duration(seconds: 1));  // finish the menu animation
+      await tester
+          .pump(const Duration(seconds: 1)); // finish the menu animation
 
       expect(find.text('Item2'), findsOneWidget);
     });

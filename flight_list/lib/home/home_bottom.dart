@@ -134,8 +134,8 @@ class CityCard extends StatelessWidget {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10.0))),
                         child: Text('$discount%',
-                            style:
-                                const TextStyle(fontSize: 14.0, color: Colors.black)),
+                            style: const TextStyle(
+                                fontSize: 14.0, color: Colors.black)),
                       )
                     ],
                   ),

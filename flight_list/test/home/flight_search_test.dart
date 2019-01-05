@@ -12,7 +12,8 @@ void main() {
       expect(() => FlightSearch(), throwsAssertionError);
     });
 
-    testWidgets('select origin city from popupmenu', (WidgetTester tester) async {
+    testWidgets('select origin city from popupmenu',
+        (WidgetTester tester) async {
       await tester.pumpWidget(const MaterialApp(
         home: Scaffold(
           body: FlightSearch(
@@ -66,7 +67,8 @@ void main() {
           findsOneWidget);
 
       // Tap on "Flights" search type
-      await tester.tap(find.widgetWithText(SearchTypeSelector, flightsSearchType));
+      await tester
+          .tap(find.widgetWithText(SearchTypeSelector, flightsSearchType));
       await tester.pump();
 
       // Same "Flights" option should remain selected
@@ -84,7 +86,8 @@ void main() {
           findsOneWidget);
 
       // Tap on "Hotels" search type
-      await tester.tap(find.widgetWithText(SearchTypeSelector, hotelsSearchType));
+      await tester
+          .tap(find.widgetWithText(SearchTypeSelector, hotelsSearchType));
       await tester.pump();
       expect(
           find.byWidgetPredicate((Widget widget) =>

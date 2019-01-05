@@ -18,7 +18,8 @@ void main() {
           findsNWidgets(2));
     });
 
-    testWidgets('Tap on self-button keeps selected state', (WidgetTester tester) async {
+    testWidgets('Tap on self-button keeps selected state',
+        (WidgetTester tester) async {
       // Build our app and trigger a frame.
       await tester.pumpWidget(app);
 
@@ -54,7 +55,8 @@ void main() {
           findsOneWidget);
     });
 
-    testWidgets('Tap on button renders selected state', (WidgetTester tester) async {
+    testWidgets('Tap on button renders selected state',
+        (WidgetTester tester) async {
       // Build our app and trigger a frame.
       await tester.pumpWidget(app);
 

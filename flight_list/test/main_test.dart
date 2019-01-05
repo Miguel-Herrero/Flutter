@@ -15,7 +15,8 @@ void main() {
   });
 
   testWidgets('Renders (Unit testing)', (WidgetTester tester) async {
-    my_app.main(); // builds the app and schedules a frame but doesn't trigger one
+    my_app
+        .main(); // builds the app and schedules a frame but doesn't trigger one
     await tester.pump(); // triggers a frame
 
     expect(find.byType(MaterialApp), findsOneWidget);
