@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flight_list/home/home_flight_search.dart';
+import 'package:flight_list/home/flight_search.dart';
 
 const List<String> locations = <String>[
   'Boston (BOS)',
@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             const FlightSearch(locations: locations),
             Container(
-              child: Text('Adios'),
+              child: const Text('Adios'),
               color: Colors.black12,
               height: 1400.0,
             )
